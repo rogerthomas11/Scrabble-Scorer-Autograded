@@ -15,7 +15,6 @@ const oldPointStructure = {
 function oldScrabbleScorer(word) {
 	word = word.toUpperCase();
 	let letterPoints = "";
- // no need to mess with this commment by me
 	for (let i = 0; i < word.length; i++) {
  
 	  for (const pointValue in oldPointStructure) {
@@ -38,7 +37,6 @@ function initialPrompt() {
 };
 
 function simpleScorer(word) {
-   word = word.toUpperCase();
    let simplePointValues = 1;
    let letterPoints = 0;
    for (let i = 0; i < word.length; i++) {
@@ -78,11 +76,6 @@ function scrabbleScorer(word) {
 
 const scoringAlgorithms = [
    {
-      name: 'Scrabble',
-      description: 'The traditional scoring algorithm.',
-      scorerFunction: scrabbleScorer
-   }, 
-   {
       name: 'Simple Score',
       description: 'Each letter is worth 1 point.', 
       scorerFunction: simpleScorer
@@ -91,6 +84,11 @@ const scoringAlgorithms = [
       name: 'Bonus Vowels', 
       description: 'Vowels are 3 pts, consonants are 1 pt.', 
       scorerFunction: vowelBonusScorer
+   },
+   {
+      name: 'Scrabble',
+      description: 'The traditional scoring algorithm.',
+      scorerFunction: scrabbleScorer
    }
 ];
 
